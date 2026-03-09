@@ -677,9 +677,34 @@ h4 {
   resize: vertical;
 }
 
+.form-honeypot {
+  display: none !important;
+}
+
+.form-status {
+  min-height: 1.4rem;
+  margin: 0.1rem 0 0.2rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.form-status.is-success {
+  color: #b7eac9;
+}
+
+.form-status.is-error {
+  color: #ffb7b7;
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: var(--text-dim);
+}
+
+.contact-form .btn[disabled] {
+  opacity: 0.72;
+  cursor: not-allowed;
 }
 
 .social-card {

@@ -205,7 +205,12 @@
           </article>
         
          
-          <form class="contact-form glass-card" id="contact-form">
+          <form
+            class="contact-form glass-card"
+            id="contact-form"
+            action="https://formsubmit.co/ajax/faustinolopezdev@gmail.com"
+            method="POST"
+          >
             <label for="contact-name">Name</label>
             <input id="contact-name" name="name" type="text" placeholder="Your name" required />
 
@@ -217,6 +222,11 @@
 
             <label for="contact-message">Message</label>
             <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+            <p class="form-status" id="contact-form-status" aria-live="polite"></p>
 
             <button class="btn btn-primary" type="submit">Send Email</button>
           </form>

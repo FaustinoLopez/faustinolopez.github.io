@@ -67,29 +67,68 @@ if (sectionEls.length > 0 && navLinks.length > 0 && "IntersectionObserver" in wi
 }
 
 const contactForm = document.getElementById("contact-form");
+const contactFormStatus = document.getElementById("contact-form-status");
+
+const setContactFormStatus = (message, isError = false, isSuccess = false) => {
+  if (!contactFormStatus) {
+    return;
+  }
+
+  contactFormStatus.textContent = message;
+  contactFormStatus.classList.toggle("is-error", isError);
+  contactFormStatus.classList.toggle("is-success", isSuccess);
+};
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const defaultButtonText = submitButton ? submitButton.textContent : "Send Email";
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    const endpoint = contactForm.getAttribute("action");
+    if (!endpoint) {
+      setContactFormStatus(
+        "Form endpoint missing. Please email me directly at faustinolopezdev@gmail.com.",
+        true
+      );
+      return;
+    }
+
     const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const subject = String(formData.get("subject") || "").trim();
-    const message = String(formData.get("message") || "").trim();
 
-    const finalSubject = subject || "New Portfolio Inquiry";
-    const bodyLines = [
-      `Name: ${name || "Not provided"}`,
-      `Email: ${email || "Not provided"}`,
-      "",
-      message || "No message provided."
-    ];
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
 
-    const mailtoHref =
-      `mailto:faustinolopezdev@gmail.com?subject=${encodeURIComponent(finalSubject)}` +
-      `&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+    setContactFormStatus("Sending your message...");
 
-    window.location.href = mailtoHref;
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message.");
+      }
+
+      contactForm.reset();
+      setContactFormStatus("Thanks! Your message was sent. I will reply within 24 hours.", false, true);
+    } catch (error) {
+      setContactFormStatus(
+        "Message failed to send. Please email me directly at faustinolopezdev@gmail.com.",
+        true
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultButtonText;
+      }
+    }
   });
 }
