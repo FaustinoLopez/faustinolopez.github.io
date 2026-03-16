@@ -69,19 +69,38 @@ if (sectionEls.length > 0 && navLinks.length > 0 && "IntersectionObserver" in wi
 const contactForm = document.getElementById("contact-form");
 const contactFormStatus = document.getElementById("contact-form-status");
 
-const setContactFormStatus = (message, isError = false, isSuccess = false) => {
+const setContactFormStatus = (message, state = "idle") => {
   if (!contactFormStatus) {
     return;
   }
 
   contactFormStatus.textContent = message;
-  contactFormStatus.classList.toggle("is-error", isError);
-  contactFormStatus.classList.toggle("is-success", isSuccess);
+  contactFormStatus.classList.toggle("is-pending", state === "pending");
+  contactFormStatus.classList.toggle("is-error", state === "error");
+  contactFormStatus.classList.toggle("is-success", state === "success");
 };
 
 if (contactForm) {
   const submitButton = contactForm.querySelector('button[type="submit"]');
-  const defaultButtonText = submitButton ? submitButton.textContent : "Send Email";
+  const defaultButtonText = submitButton ? submitButton.textContent.trim() : "Send Project Inquiry";
+
+  const setSubmittingState = (isSubmitting) => {
+    contactForm.setAttribute("aria-busy", String(isSubmitting));
+
+    if (!submitButton) {
+      return;
+    }
+
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = isSubmitting ? "Sending..." : defaultButtonText;
+  };
+
+  const clearContactFormStatus = () => {
+    setContactFormStatus("");
+  };
+
+  contactForm.addEventListener("input", clearContactFormStatus);
+  contactForm.addEventListener("change", clearContactFormStatus);
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -90,19 +109,14 @@ if (contactForm) {
     if (!endpoint) {
       setContactFormStatus(
         "Form endpoint missing. Please email me directly at faustinolopezdev@gmail.com.",
-        true
+        "error"
       );
       return;
     }
 
     const formData = new FormData(contactForm);
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-    }
-
-    setContactFormStatus("Sending your message...");
+    setSubmittingState(true);
+    setContactFormStatus("Sending your project inquiry...", "pending");
 
     try {
       const response = await fetch(endpoint, {
@@ -118,17 +132,14 @@ if (contactForm) {
       }
 
       contactForm.reset();
-      setContactFormStatus("Thanks! Your message was sent. I will reply within 24 hours.", false, true);
+      setContactFormStatus("Thanks! Your message was sent. I will reply within 24 hours.", "success");
     } catch (error) {
       setContactFormStatus(
-        "Message failed to send. Please email me directly at faustinolopezdev@gmail.com.",
-        true
+        "Your inquiry could not be sent. Please try again or email me directly at faustinolopezdev@gmail.com.",
+        "error"
       );
     } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = defaultButtonText;
-      }
+      setSubmittingState(false);
     }
   });
 }
