@@ -97,6 +97,10 @@ p {
   margin-top: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 .portfolio-shell {
   width: min(1200px, calc(100vw - 32px));
   margin: 0 auto;
@@ -128,6 +132,20 @@ p {
   align-items: start;
   justify-content: center;
   margin-bottom: 3rem;
+}
+
+.corner-mark {
+  position: fixed;
+  top: 0.55rem;
+  left: 0.75rem;
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212, 201, 181, 0.82);
+  z-index: 20;
+  pointer-events: none;
 }
 
 .site-header {
@@ -357,6 +375,14 @@ nav a:focus-visible,
   margin-top: 3rem;
 }
 
+#services,
+#skills,
+#projects,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 /* FLOATING PANELS (no borders, soft depth) */
 .float-panel{
   background: rgba(255,255,255,0.06);
@@ -517,6 +543,10 @@ h4 {
   overflow: hidden;
   box-shadow: 0 22px 60px rgba(0,0,0,0.35);
   transform: translateZ(0);
+}
+
+.project-preview picture{
+  display: block;
 }
 
 .project-preview img{
@@ -738,6 +768,10 @@ h4 {
   color: var(--accent);
 }
 
+.section-label {
+  line-height: 1.1;
+}
+
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -904,6 +938,36 @@ footer {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn:hover,
+  .project-slot:hover,
+  .project-preview:hover,
+  .social-link:hover,
+  nav a:hover,
+  nav a.is-active {
+    transform: none;
+  }
+}
+
 @keyframes popIn {
   from {
     opacity: 0;
@@ -946,6 +1010,13 @@ footer {
   .portfolio-shell {
     width: min(100vw - 18px, 640px);
     padding-top: 1rem;
+  }
+
+  .corner-mark {
+    top: 0.45rem;
+    left: 0.55rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
   }
 
   nav {

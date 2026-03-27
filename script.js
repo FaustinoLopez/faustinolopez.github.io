@@ -1,7 +1,51 @@
 const yearEl = document.getElementById("year");
+const analyticsMeasurementId = "G-YW5SPXKXVW";
+const analyticsHosts = new Set([
+  "faustinolopez.github.io",
+  "www.faustinolopez.github.io",
+  "faustinolopez.com",
+  "www.faustinolopez.com"
+]);
 
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
+}
+
+const initAnalytics = () => {
+  if (!analyticsHosts.has(window.location.hostname) || window.gtag) {
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag("js", new Date());
+  window.gtag("config", analyticsMeasurementId, {
+    transport_type: "beacon"
+  });
+
+  document.head.appendChild(script);
+};
+
+if (analyticsHosts.has(window.location.hostname)) {
+  const triggerAnalyticsLoad = () => {
+    initAnalytics();
+    window.removeEventListener("pointerdown", triggerAnalyticsLoad);
+    window.removeEventListener("keydown", triggerAnalyticsLoad);
+    window.removeEventListener("scroll", triggerAnalyticsLoad);
+    window.removeEventListener("touchstart", triggerAnalyticsLoad);
+  };
+
+  window.addEventListener("pointerdown", triggerAnalyticsLoad, { once: true, passive: true });
+  window.addEventListener("keydown", triggerAnalyticsLoad, { once: true });
+  window.addEventListener("scroll", triggerAnalyticsLoad, { once: true, passive: true });
+  window.addEventListener("touchstart", triggerAnalyticsLoad, { once: true, passive: true });
 }
 
 const revealTargets = document.querySelectorAll(".glass-card, .section-shell");
@@ -108,7 +152,7 @@ if (contactForm) {
     const endpoint = contactForm.getAttribute("action");
     if (!endpoint) {
       setContactFormStatus(
-        "Form endpoint missing. Please email me directly at faustinolopezdev@gmail.com.",
+        "Form endpoint missing. Please email me directly at hello@faustinolopez.com.",
         "error"
       );
       return;
@@ -135,7 +179,7 @@ if (contactForm) {
       setContactFormStatus("Thanks! Your message was sent. I will reply within 24 hours.", "success");
     } catch (error) {
       setContactFormStatus(
-        "Your inquiry could not be sent. Please try again or email me directly at faustinolopezdev@gmail.com.",
+        "Your inquiry could not be sent. Please try again or email me directly at hello@faustinolopez.com.",
         "error"
       );
     } finally {

@@ -7,27 +7,29 @@
     name="description"
     content="Faustino Lopez is a Houston-based web developer building fast, mobile-friendly websites, landing pages, and redesigns for small businesses."
   />
+  <meta name="theme-color" content="#000000" />
   <title>Faustino Lopez | Web Developer</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YW5SPXKXVW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YW5SPXKXVW');
-  </script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="background-layer"></div>
+  <p class="corner-mark" aria-label="TGBTG">TGBTG</p>
 
   <main class="portfolio-shell" id="top">
     <section class="hero section-shell" aria-labelledby="site-name">
-      
       <header class="top-name">
       <h1 class="name-title" id="site-name">Faustino Lopez</h1>
       <p class="name-subtitle">Front-End Web Developer | Houston, Texas</p>
@@ -45,9 +47,9 @@
 
 
     <div class="content-grid">
-      <section class="section-shell" id="about">
+      <section class="section-shell" id="about" aria-labelledby="about-heading">
         <div class="section-heading">
-          <p class="section-label">About Me</p>
+          <h2 class="section-label" id="about-heading">About Me</h2>
         </div>
         <div class="section-card-grid about-panel">
           <article class="glass-card info-card about-card">
@@ -61,9 +63,9 @@
         </div>
       </section>
 
-      <section class="section-shell" id="services">
+      <section class="section-shell" id="services" aria-labelledby="services-heading">
         <div class="section-heading">
-          <p class="section-label">Services</p>
+          <h2 class="section-label" id="services-heading">Services</h2>
         </div>
         <div class="section-card-grid section-card-grid-three">
           <article class="glass-card info-card">
@@ -87,9 +89,9 @@
         </div>
       </section>
 
-      <section class="section-shell" id="skills">
+      <section class="section-shell" id="skills" aria-labelledby="skills-heading">
         <div class="section-heading">
-          <p class="section-label">Skills</p>
+          <h2 class="section-label" id="skills-heading">Skills</h2>
         </div>
         <div class="section-card-grid section-card-grid-three">
           <article class="glass-card info-card">
@@ -98,8 +100,11 @@
                 <span class="skill-icon" aria-hidden="true">
                   <img
                     class="skill-icon-image"
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+                    src="images/html5-icon.svg"
                     alt=""
+                    width="24"
+                    height="24"
+                    decoding="async"
                     loading="lazy"
                   />
                 </span>
@@ -109,8 +114,11 @@
                 <span class="skill-icon" aria-hidden="true">
                   <img
                     class="skill-icon-image"
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
+                    src="images/css3-icon.svg"
                     alt=""
+                    width="24"
+                    height="24"
+                    decoding="async"
                     loading="lazy"
                   />
                 </span>
@@ -135,15 +143,15 @@
         </div>
       </section>
 
-      <section class="section-shell" id="projects">
+      <section class="section-shell" id="projects" aria-labelledby="projects-heading">
         <div class="section-heading">
-          <p class="section-label">Projects</p>
+          <h2 class="section-label" id="projects-heading">Projects</h2>
         </div>
         <div class="section-card-grid project-list">
           <article class="project-slot glass-card project-row">
             <div class="project-copy">
               <p class="project-kicker">Project 01</p>
-              <h4>Retro Gaming Website</h4>
+              <h3>Retro Gaming Website</h3>
               <p>
                 A custom front-end build with retro styling, smooth section flow,
                 and a clear visual hierarchy to showcase classic gaming systems.
@@ -165,16 +173,27 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="images/retrogaming.png"
-                alt="Retro Gaming website hero section"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="images/retrogaming-640.webp 640w, images/retrogaming-1200.webp 1200w"
+                  sizes="(max-width: 980px) 100vw, 52vw"
+                />
+                <img
+                  src="images/retrogaming.png"
+                  alt="Retro Gaming website hero section"
+                  width="1499"
+                  height="843"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </a>
           </article>
           <article class="project-slot glass-card project-row">
             <div class="project-copy">
               <p class="project-kicker">Project 02</p>
-              <h4>HVAC Website</h4>
+              <h3>HVAC Website</h3>
               <p>
                 A local-service website designed to build trust quickly,
                 highlight key services, and make quote requests simple.
@@ -188,16 +207,27 @@
               >View Live Site</a>
             </div>
             <div class="project-preview">
-              <img
-                src="images/HVAC.png"
-                alt="HVAC website preview"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="images/HVAC-640.webp 640w, images/HVAC-1200.webp 1200w"
+                  sizes="(max-width: 980px) 100vw, 52vw"
+                />
+                <img
+                  src="images/HVAC.png"
+                  alt="HVAC website preview"
+                  width="1890"
+                  height="862"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </article>
           <article class="project-slot glass-card project-row">
             <div class="project-copy">
               <p class="project-kicker">Project 03</p>
-              <h4>Landscaping Website</h4>
+              <h3>Landscaping Website</h3>
               <p>
                 A modern front-end website designed for a landscaping business, featuring a clean layout, service-focused sections, and strong visual presentation for potential customers.
               </p>
@@ -212,10 +242,21 @@
               </a>
             </div>
             <div class="project-preview">
-              <img
-                src="images/landscaping.png"
-                alt="Landscaping website preview"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="images/landscaping-640.webp 640w, images/landscaping-1200.webp 1200w"
+                  sizes="(max-width: 980px) 100vw, 52vw"
+                />
+                <img
+                  src="images/landscaping.png"
+                  alt="Landscaping website preview"
+                  width="1898"
+                  height="845"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </article>
         </div>
@@ -321,7 +362,5 @@
   <footer>
     <p>&copy; <span id="year"></span> Faustino Lopez. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
