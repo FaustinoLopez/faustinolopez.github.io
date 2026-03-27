@@ -49,6 +49,7 @@ body{
   min-height:100vh;
   font-family: "Manrope", "Segoe UI", Arial, sans-serif;
   color: var(--ink);
+  overflow-x: hidden;
   background: linear-gradient(
     180deg,
     #000000 0%,
@@ -598,7 +599,7 @@ h4 {
 }
 
 #skills .info-card {
-  width: fit-content;
+  width: min(100%, 900px);
 }
 
 .skill-pills li {
@@ -606,6 +607,9 @@ h4 {
   align-items: center;
   gap: 0.7rem;
   font-weight: 700;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 .skill-icon {
@@ -682,6 +686,7 @@ h4 {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  overflow-wrap: anywhere;
   transition: color 0.18s ease, border-color 0.18s ease;
 }
 
@@ -981,6 +986,10 @@ footer {
 }
 
 @media (max-width: 980px) {
+  .portfolio-shell {
+    padding: 4rem 2.5rem;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     gap: 1.4rem;
@@ -1000,6 +1009,14 @@ footer {
     gap: 1.1rem;
   }
 
+  .project-row {
+    gap: 1.4rem;
+  }
+
+  .project-copy {
+    padding: 1.5rem;
+  }
+
   .contact-intro-card,
   .contact-form {
     padding: 1.7rem;
@@ -1008,8 +1025,8 @@ footer {
 
 @media (max-width: 640px) {
   .portfolio-shell {
-    width: min(100vw - 18px, 640px);
-    padding-top: 1rem;
+    width: min(100%, calc(100vw - 18px));
+    padding: 1.25rem 0.95rem 2.5rem;
   }
 
   .corner-mark {
@@ -1019,8 +1036,29 @@ footer {
     letter-spacing: 0.14em;
   }
 
+  .top-name {
+    margin: 1.7rem 0 1.35rem;
+  }
+
   nav {
-    gap: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  nav a {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 0.7rem;
+    text-align: center;
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+  }
+
+  nav a:hover,
+  nav a.is-active {
+    transform: none;
   }
 
   .hero-copy-block {
@@ -1030,6 +1068,21 @@ footer {
 
   .name-title {
     font-size: clamp(2.5rem, 16vw, 4rem);
+  }
+
+  .name-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .content-grid {
+    gap: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .section-label {
+    font-size: 1.2rem;
+    letter-spacing: 0.16em;
   }
 
   .intro-card,
@@ -1043,8 +1096,38 @@ footer {
     padding: 1.1rem;
   }
 
+  .about-card {
+    min-height: 0;
+  }
+
+  #skills .info-card {
+    width: 100%;
+  }
+
+  .skill-pills {
+    gap: 0.6rem;
+  }
+
+  .skill-pills li {
+    width: 100%;
+  }
+
+  .project-row {
+    gap: 1rem;
+  }
+
+  .project-copy {
+    padding: 1.15rem;
+  }
+
   .project-preview {
     min-height: 180px;
+    border-radius: 10px;
+  }
+
+  .project-preview img {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .project-preview-placeholder {
