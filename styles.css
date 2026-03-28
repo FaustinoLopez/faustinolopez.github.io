@@ -500,6 +500,7 @@ h4 {
 
 .project-list {
   grid-template-columns: 1fr;
+  justify-items: stretch;
 }
 
 .project-row {
@@ -507,11 +508,14 @@ h4 {
   grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.3fr);
   gap: 2.2rem;
   align-items: center;
+  width: 100%;
 }
 
 
 .project-slot{
   padding: 2.4rem;
+  width: 100%;
+  margin: 0;
 }
 
 .project-copy {
@@ -544,6 +548,7 @@ h4 {
 /* FLOATING SCREENSHOT PREVIEW */
 .project-preview{
   display: block;
+  width: 100%;
   min-height: 0;
   border: none;
   background: transparent;
@@ -556,6 +561,7 @@ h4 {
 
 .project-preview picture{
   display: block;
+  width: 100%;
 }
 
 .project-preview img{
@@ -563,10 +569,7 @@ h4 {
   height: auto;
   display: block;
   object-fit: contain;
-
-  /* subtle fade effect */
-  -webkit-mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
+  object-position: center;
 }
 
 .project-preview-placeholder {
@@ -1021,6 +1024,10 @@ footer {
     gap: 1.4rem;
   }
 
+  #projects .project-slot {
+    padding: 1.8rem;
+  }
+
   .project-copy {
     padding: 1.5rem;
   }
@@ -1058,7 +1065,18 @@ footer {
   }
 
   .project-copy {
-    padding: 0;
+    padding: 0.6rem;
+  }
+
+  #projects .project-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  #projects .project-copy > h3,
+  #projects .project-copy > p {
+    width: min(100%, 30ch);
+    margin-inline: auto;
   }
 
   .project-preview {
@@ -1192,37 +1210,36 @@ footer {
   }
 
   #projects .project-list {
-    justify-items: center;
+    justify-items: stretch;
+    gap: 1rem;
+  }
+
+  #projects .project-slot {
+    padding: 1.1rem clamp(0.95rem, 4vw, 1.2rem);
   }
 
   #projects .project-row {
-    width: calc(100% - 1rem);
-    margin-inline: auto;
-    justify-items: center;
+    width: 100%;
+    margin: 0;
+    justify-items: stretch;
     gap: 1rem;
-    padding: 1.35rem;
   }
 
-  .project-copy {
-    gap: 0.7rem;
-    padding: 0;
+  #projects .project-copy {
+    gap: 0.75rem;
+    padding: 0.45rem 0.35rem 0.95rem;
   }
 
   #projects .project-copy,
   #projects .project-preview {
     width: 100%;
-    margin-inline: auto;
+    margin: 0;
   }
 
   .project-preview {
     order: -1;
-    min-height: 180px;
+    min-height: 0;
     border-radius: 10px;
-  }
-
-  .project-preview img {
-    -webkit-mask-image: none;
-    mask-image: none;
   }
 
   .project-preview-placeholder {
@@ -1235,6 +1252,8 @@ footer {
 
   #projects .project-link {
     width: fit-content;
+    margin-inline: auto;
+    margin-top: 0.35rem;
   }
 
   .contact-intro-card,
