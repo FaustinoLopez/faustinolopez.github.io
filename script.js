@@ -50,7 +50,11 @@ if (analyticsHosts.has(window.location.hostname)) {
 
 const revealTargets = document.querySelectorAll(".glass-card, .section-shell");
 const sectionEls = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll('.site-header nav a[href^="#"]');
+const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const siteHeader = document.querySelector(".site-header");
+const siteNav = document.getElementById("site-nav");
+const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+const mobileNavBreakpoint = window.matchMedia("(max-width: 980px)");
 
 if (revealTargets.length > 0 && "IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
@@ -107,6 +111,37 @@ if (sectionEls.length > 0 && navLinks.length > 0 && "IntersectionObserver" in wi
 
   sectionEls.forEach((section) => {
     activeObserver.observe(section);
+  });
+}
+
+if (siteHeader && siteNav && mobileNavToggle) {
+  const setMobileNavOpen = (isOpen) => {
+    siteHeader.classList.toggle("nav-open", isOpen);
+    mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  mobileNavToggle.addEventListener("click", () => {
+    setMobileNavOpen(!siteHeader.classList.contains("nav-open"));
+  });
+
+  siteNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      if (mobileNavBreakpoint.matches) {
+        setMobileNavOpen(false);
+      }
+    });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMobileNavOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!mobileNavBreakpoint.matches) {
+      setMobileNavOpen(false);
+    }
   });
 }
 
