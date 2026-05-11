@@ -10,7 +10,7 @@
   />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Faustino Lopez" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#0B0F14" />
   <link rel="canonical" href="https://www.faustinolopez.com" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
@@ -59,13 +59,24 @@
   <div class="background-layer"></div>
 
   <main class="portfolio-shell" id="top">
-    <section class="hero section-shell" aria-labelledby="site-name">
-      <header class="top-name">
-      <h1 class="name-title" id="site-name">Faustino Lopez</h1>
-      <p class="name-subtitle">Front-End Web Developer | Houston, Texas</p>
-      </header>
-      
+    <section class="hero section-shell" aria-labelledby="hero-heading">
       <header class="site-header">
+        <a class="site-brand" href="#top" aria-label="Faustino Lopez home">
+          <img
+            class
+          ="site-brand-logo"
+            src="assets/fl-logo.png"
+            alt="Faustino Lopez logo"
+            width="540"
+            height="641"
+            decoding="async"
+          />
+          <span class="site-brand-copy">
+            <span class="site-brand-name">Faustino Lopez</span>
+            <span class="site-brand-role">Small Business Web Developer</span>
+          </span>
+        </a>
+
         <nav aria-label="Primary">
           <a href="#services">Services</a>
           <a href="#projects">Projects</a>
@@ -73,6 +84,113 @@
           <a href="#contact">Contact Me</a>
         </nav>
       </header>
+
+      <div class="hero-layout">
+        <div class="hero-copy-block">
+          <p class="hero-eyebrow">Houston Web Developer for Small Businesses</p>
+          <h1 class="hero-headline" id="hero-heading">Custom websites that make your business look professional and easier to contact.</h1>
+          <p class="hero-subheadline">
+            I build fast, mobile-friendly websites for local service businesses that need a cleaner online presence, clearer messaging, and stronger calls to action.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View My Work</a>
+            <a class="btn btn-secondary" href="#contact">Start a Website Project</a>
+          </div>
+
+          <p class="hero-microcopy">Custom-coded • Mobile-friendly • Built for trust</p>
+        </div>
+
+        <div class="hero-visual-shell" aria-hidden="true">
+          <div class="hero-preview-card">
+            <div class="hero-browser-bar">
+              <span class="browser-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span class="hero-browser-label">Custom Business Website</span>
+            </div>
+
+            <div class="hero-preview-body">
+              <div class="hero-preview-hero">
+                <span class="hero-preview-eyebrow">Local Service Business</span>
+                <h2>Professional website. Clear next step.</h2>
+                <p>Clean messaging, service sections, and a contact path built to earn trust fast.</p>
+                <span class="hero-preview-cta">Request a Quote</span>
+              </div>
+
+              <div class="hero-preview-services">
+                <article class="hero-preview-service-card">
+                  <span class="hero-preview-service-icon"></span>
+                  <h3>Services</h3>
+                  <p>Clear offers for the work you provide.</p>
+                </article>
+                <article class="hero-preview-service-card">
+                  <span class="hero-preview-service-icon"></span>
+                  <h3>About</h3>
+                  <p>Trust-building business information.</p>
+                </article>
+                <article class="hero-preview-service-card">
+                  <span class="hero-preview-service-icon"></span>
+                  <h3>Contact</h3>
+                  <p>Easy quote and inquiry experience.</p>
+                </article>
+              </div>
+
+              <div class="hero-preview-proof">
+                <div class="hero-preview-proof-mark"></div>
+                <div>
+                  <strong>Built to feel trustworthy on desktop and mobile.</strong>
+                  <p>Focused on clarity, contact, and a polished first impression.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-mobile-card">
+              <span class="hero-mobile-notch"></span>
+              <div class="hero-mobile-screen">
+                <span class="hero-mobile-badge">Mobile-ready</span>
+                <div class="hero-mobile-line hero-mobile-line-strong"></div>
+                <div class="hero-mobile-line"></div>
+                <div class="hero-mobile-line hero-mobile-line-short"></div>
+                <div class="hero-mobile-button"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-strip" aria-label="Business website benefits">
+        <article class="proof-item">
+          <span class="proof-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Custom-coded websites</h3>
+            <p>Built around your business instead of a one-size-fits-all template.</p>
+          </div>
+        </article>
+        <article class="proof-item">
+          <span class="proof-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Mobile-first layouts</h3>
+            <p>Designed to feel clear and easy to use on phones first.</p>
+          </div>
+        </article>
+        <article class="proof-item">
+          <span class="proof-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Clear calls to action</h3>
+            <p>Helps visitors understand what to do next without confusion.</p>
+          </div>
+        </article>
+        <article class="proof-item">
+          <span class="proof-icon" aria-hidden="true"></span>
+          <div>
+            <h3>Built for small businesses</h3>
+            <p>Focused on local service companies that need a stronger online presence.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
 
@@ -98,41 +216,101 @@
           <h2 class="section-label" id="services-heading">Services</h2>
         </div>
         <div class="section-card-grid section-card-grid-three">
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">Website Build</span>
+            </div>
             <h3>Website Design</h3>
-            <p class="skills-note">
-              Professional websites built to make your business look credible, communicate clearly, and make it easy for customers to take action.
+            <p class="card-description">
+              A custom website built to make your business look credible, explain your services clearly, and guide visitors toward contacting you.
             </p>
+            <ul class="card-tags" aria-label="Website Design features">
+              <li class="card-tag">Mobile-friendly</li>
+              <li class="card-tag">Fast loading</li>
+              <li class="card-tag">Clear CTA</li>
+            </ul>
+            <p class="card-note">Built for local service businesses that need a stronger first impression online.</p>
           </article>
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">Redesign</span>
+            </div>
             <h3>Website Redesign</h3>
-            <p class="skills-note">
-              Redesigning outdated websites with a better layout, improved structure, and a cleaner overall experience across devices.
+            <p class="card-description">
+              A cleaner, more modern redesign for businesses whose current website feels outdated, hard to navigate, or light on trust.
             </p>
+            <ul class="card-tags" aria-label="Website Redesign features">
+              <li class="card-tag">Modern refresh</li>
+              <li class="card-tag">Better structure</li>
+              <li class="card-tag">Trust-focused</li>
+            </ul>
+            <p class="card-note">Ideal for businesses that need a more polished and trustworthy online presence.</p>
           </article>
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">Maintenance</span>
+            </div>
             <h3>Website Maintenance</h3>
-            <p class="skills-note">
-              Reliable ongoing support to keep your website updated, secure, and functioning the way it should.
+            <p class="card-description">
+              Ongoing help to keep your website updated, working properly, and easier to manage without turning into a constant to-do.
             </p>
+            <ul class="card-tags" aria-label="Website Maintenance features">
+              <li class="card-tag">Easy updates</li>
+              <li class="card-tag">Issue fixes</li>
+              <li class="card-tag">Ongoing support</li>
+            </ul>
+            <p class="card-note">Steady support so your website stays current without becoming another task on your list.</p>
           </article>
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">Automation</span>
+            </div>
             <h3>Automation Setup</h3>
-            <p class="skills-note">
-              Workflow setup for things like follow-ups, reminders, and contact responses to reduce manual work and improve consistency.
+            <p class="card-description">
+              Simple workflow setup for follow-ups, reminders, and contact responses so your business stays consistent without extra manual work.
             </p>
+            <ul class="card-tags" aria-label="Automation Setup features">
+              <li class="card-tag">Follow-ups</li>
+              <li class="card-tag">Reminders</li>
+              <li class="card-tag">Less manual work</li>
+            </ul>
+            <p class="card-note">Useful for small teams that want smoother operations behind the scenes.</p>
           </article>
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">CRM Setup</span>
+            </div>
             <h3>CRM Setup</h3>
-            <p class="skills-note">
-              Setting up a system to organize leads, track inquiries, and manage customer communication more efficiently.
+            <p class="card-description">
+              A better system for organizing leads, tracking inquiries, and keeping customer communication from slipping through the cracks.
             </p>
+            <ul class="card-tags" aria-label="CRM Setup features">
+              <li class="card-tag">Lead tracking</li>
+              <li class="card-tag">Organized pipeline</li>
+              <li class="card-tag">Cleaner follow-up</li>
+            </ul>
+            <p class="card-note">A better foundation for managing inquiries without losing visibility on potential clients.</p>
           </article>
-          <article class="glass-card info-card">
+          <article class="glass-card info-card panel-card section-card service-card">
+            <div class="card-header">
+              <span class="card-mark" aria-hidden="true"></span>
+              <span class="card-eyebrow">Lead Capture</span>
+            </div>
             <h3>Lead Capture Setup</h3>
-            <p class="skills-note">
-              Building lead forms and contact processes that help turn website traffic into organized inquiries you can actually follow up on.
+            <p class="card-description">
+              Lead-ready forms and contact flows that help turn website visits into organized inquiries you can respond to quickly.
             </p>
+            <ul class="card-tags" aria-label="Lead Capture Setup features">
+              <li class="card-tag">Lead-ready</li>
+              <li class="card-tag">Contact flow</li>
+              <li class="card-tag">Small business focused</li>
+            </ul>
+            <p class="card-note">Designed to help website traffic turn into clear, trackable conversations.</p>
           </article>
         </div>
       </section>
@@ -196,23 +374,33 @@
           <h2 class="section-label" id="projects-heading">My Work</h2>
         </div>
         <div class="section-card-grid project-list">
-          <article class="project-slot glass-card">
+          <article class="project-slot glass-card panel-card section-card project-card">
             <div class="project-row">
               <div class="project-copy">
+                <div class="card-header project-topline">
+                  <span class="card-mark" aria-hidden="true"></span>
+                  <span class="card-eyebrow">Entertainment Showcase</span>
+                </div>
                 <h3>Retro Gaming Website</h3>
-                <p>
-                  A custom front-end build with retro styling, smooth section flow,
-                  and a clear visual hierarchy to showcase classic gaming systems.
+                <p class="project-description">
+                  A custom front-end concept showing how a niche brand can feel memorable while still keeping navigation, sections, and featured content easy to browse.
                 </p>
-                <p class="project-stack">Stack: HTML, CSS, JavaScript</p>
-                <a
-                  href="https://faustinolopez.github.io/Retro-Gaming-site/"
-                  class="btn btn-primary project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Live Site
-                </a>
+                <p class="project-meta"><span>Focus</span> Visual hierarchy, section flow, and a more polished branded browsing experience.</p>
+                <ul class="card-tags project-stack-list" aria-label="Retro Gaming Website stack">
+                  <li class="card-tag">HTML</li>
+                  <li class="card-tag">CSS</li>
+                  <li class="card-tag">JavaScript</li>
+                </ul>
+                <div class="project-actions">
+                  <a
+                    href="https://faustinolopez.github.io/Retro-Gaming-site/"
+                    class="btn btn-primary project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Live Site
+                  </a>
+                </div>
               </div>
 
               <a
@@ -221,88 +409,173 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcset="images/retrogaming-640.webp 640w, images/retrogaming-1200.webp 1200w"
-                    sizes="(max-width: 980px) 100vw, 52vw"
-                  />
-                  <img
-                    src="images/retrogaming.png"
-                    alt="Retro Gaming website hero section"
-                    width="1499"
-                    height="843"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
+                <span class="project-browser-bar" aria-hidden="true">
+                  <span class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="browser-label">Live Preview</span>
+                </span>
+                <span class="project-preview-stage">
+                  <span class="project-preview-overlay" aria-hidden="true">
+                    <span class="project-preview-chip">Service layout</span>
+                    <span class="project-preview-bars">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </span>
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="images/retrogaming-640.webp 640w, images/retrogaming-1200.webp 1200w"
+                      sizes="(max-width: 980px) 100vw, 52vw"
+                    />
+                    <img
+                      src="images/retrogaming.png"
+                      alt="Retro Gaming website hero section"
+                      width="1499"
+                      height="843"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </span>
               </a>
             </div>
           </article>
-          <article class="project-slot glass-card">
+          <article class="project-slot glass-card panel-card section-card project-card">
             <div class="project-row">
               <div class="project-copy">
+                <div class="card-header project-topline">
+                  <span class="card-mark" aria-hidden="true"></span>
+                  <span class="card-eyebrow">Local Service Website</span>
+                </div>
                 <h3>HVAC Website</h3>
-                <p>
-                  A local-service website designed to build trust quickly,
-                  highlight key services, and make quote requests simple.
+                <p class="project-description">
+                  A service-business website concept built to make the company feel trustworthy fast, highlight key offers, and keep quote requests easy to find.
                 </p>
-                <p class="project-stack">Stack: HTML, CSS, JavaScript</p>
-                <a
-                  href="https://faustinolopez.github.io/HVAC/"
-                  class="btn btn-primary project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >View Live Site</a>
+                <p class="project-meta"><span>Built for</span> Home-service businesses that need clearer messaging and an easier inquiry path.</p>
+                <ul class="card-tags project-stack-list" aria-label="HVAC Website stack">
+                  <li class="card-tag">HTML</li>
+                  <li class="card-tag">CSS</li>
+                  <li class="card-tag">JavaScript</li>
+                </ul>
+                <div class="project-actions">
+                  <a
+                    href="https://faustinolopez.github.io/HVAC/"
+                    class="btn btn-primary project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >View Live Site</a>
+                </div>
               </div>
-              <div class="project-preview">
-                <picture>
-                  <source
-                    type="image/webp"
-                    srcset="images/HVAC-640.webp 640w, images/HVAC-1200.webp 1200w"
-                    sizes="(max-width: 980px) 100vw, 52vw"
-                  />
-                  <img
-                    src="images/HVAC.png"
-                    alt="HVAC website preview"
-                    width="1890"
-                    height="862"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
+              <a
+                class="project-preview"
+                href="https://faustinolopez.github.io/HVAC/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="project-browser-bar" aria-hidden="true">
+                  <span class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="browser-label">Live Preview</span>
+                </span>
+                <span class="project-preview-stage">
+                  <span class="project-preview-overlay" aria-hidden="true">
+                    <span class="project-preview-chip">Quote-ready CTA</span>
+                    <span class="project-preview-bars">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </span>
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="images/HVAC-640.webp 640w, images/HVAC-1200.webp 1200w"
+                      sizes="(max-width: 980px) 100vw, 52vw"
+                    />
+                    <img
+                      src="images/HVAC.png"
+                      alt="HVAC website preview"
+                      width="1890"
+                      height="862"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </span>
+              </a>
             </div>
           </article>
-          <article class="project-slot glass-card">
+          <article class="project-slot glass-card panel-card section-card project-card">
             <div class="project-row">
               <div class="project-copy">
+                <div class="card-header project-topline">
+                  <span class="card-mark" aria-hidden="true"></span>
+                  <span class="card-eyebrow">Landscaping Website</span>
+                </div>
                 <h3>Landscaping Website</h3>
-                <p>
-                  A modern front-end website designed for a landscaping business, featuring a clean layout, service-focused sections, and strong visual presentation for potential customers.
+                <p class="project-description">
+                  A modern front-end build for a landscaping company with service-led sections, a cleaner layout, and a stronger visual presentation for potential customers.
                 </p>
-                <p class="project-stack">Stack: HTML, CSS, JavaScript</p>
-                <a
-                  href="https://faustinolopez.github.io/Landscaping/"
-                  class="btn btn-primary project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Live Site
-                </a>
+                <p class="project-meta"><span>Focus</span> Trust-building presentation, clearer service structure, and stronger first-impression polish.</p>
+                <ul class="card-tags project-stack-list" aria-label="Landscaping Website stack">
+                  <li class="card-tag">HTML</li>
+                  <li class="card-tag">CSS</li>
+                  <li class="card-tag">JavaScript</li>
+                </ul>
+                <div class="project-actions">
+                  <a
+                    href="https://faustinolopez.github.io/Landscaping/"
+                    class="btn btn-primary project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Live Site
+                  </a>
+                </div>
               </div>
-              <div class="project-preview">
-                <picture>
-                  <img
-                    src="images/landv2.png"
-                    alt="Landscaping website preview"
-                    width="1889"
-                    height="866"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
+              <a
+                class="project-preview"
+                href="https://faustinolopez.github.io/Landscaping/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="project-browser-bar" aria-hidden="true">
+                  <span class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <span class="browser-label">Live Preview</span>
+                </span>
+                <span class="project-preview-stage">
+                  <span class="project-preview-overlay" aria-hidden="true">
+                    <span class="project-preview-chip">Trust-focused layout</span>
+                    <span class="project-preview-bars">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </span>
+                  <picture>
+                    <img
+                      src="images/landv2.png"
+                      alt="Landscaping website preview"
+                      width="1889"
+                      height="866"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </span>
+              </a>
             </div>
           </article>
         </div>
@@ -408,6 +681,7 @@
   </main>
 
   <footer>
+    <p class="footer-note" aria-label="To God be the glory">TGBTG</p>
     <p>&copy; <span id="year"></span> Faustino Lopez. All rights reserved.</p>
   </footer>
 </body>
