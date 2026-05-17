@@ -50,7 +50,8 @@ if (analyticsHosts.has(window.location.hostname)) {
 
 const revealTargets = document.querySelectorAll(".glass-card, .section-shell");
 const sectionEls = document.querySelectorAll("main section[id]");
-const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+const navLinks = document.querySelectorAll(".site-nav a");
+const sectionNavLinks = document.querySelectorAll('.site-nav a[href^="#"]');
 const siteHeader = document.querySelector(".site-header");
 const siteNav = document.getElementById("site-nav");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
@@ -75,10 +76,10 @@ if (revealTargets.length > 0 && "IntersectionObserver" in window) {
   });
 }
 
-if (sectionEls.length > 0 && navLinks.length > 0 && "IntersectionObserver" in window) {
+if (sectionEls.length > 0 && sectionNavLinks.length > 0 && "IntersectionObserver" in window) {
   const linkMap = new Map();
 
-  navLinks.forEach((link) => {
+  sectionNavLinks.forEach((link) => {
     const id = link.getAttribute("href");
     if (id) {
       linkMap.set(id.slice(1), link);
@@ -97,7 +98,7 @@ if (sectionEls.length > 0 && navLinks.length > 0 && "IntersectionObserver" in wi
 
       const activeId = visible[0].target.id;
 
-      navLinks.forEach((link) => {
+      sectionNavLinks.forEach((link) => {
         link.classList.remove("is-active");
       });
 
@@ -124,7 +125,7 @@ if (siteHeader && siteNav && mobileNavToggle) {
     setMobileNavOpen(!siteHeader.classList.contains("nav-open"));
   });
 
-  siteNav.querySelectorAll('a[href^="#"]').forEach((link) => {
+  siteNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       if (mobileNavBreakpoint.matches) {
         setMobileNavOpen(false);
