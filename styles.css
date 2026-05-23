@@ -3883,6 +3883,13 @@ h4 {
   transform: translateX(46px);
 }
 
+@media (max-width: 640px) {
+  .contact-main-section.process-reveal .process-visual,
+  .contact-main-section.process-reveal .process-visual.process-visual-right {
+    transform: translateY(38px);
+  }
+}
+
 .contact-hero.process-reveal.is-visible .process-reveal-item,
 .contact-main-section.process-reveal.is-visible .process-visual,
 .contact-social-section.process-reveal.is-visible .process-reveal-item,
