@@ -5394,10 +5394,10 @@ footer {
 
 .industry-section h2,
 .industry-cta h2 {
-  max-width: 17ch;
+  max-width: 680px;
   color: #f8fafc;
-  font-size: clamp(2.35rem, 5vw, 4.7rem);
-  line-height: 0.98;
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
+  line-height: 1.05;
   text-wrap: balance;
 }
 
@@ -5506,7 +5506,7 @@ footer {
 }
 
 .industry-related-copy h2 {
-  max-width: 14ch;
+  max-width: 680px;
 }
 
 .industry-related-copy p:not(.industry-kicker) {
@@ -5540,7 +5540,7 @@ footer {
 }
 
 .industry-proof-copy h2 {
-  max-width: 12ch;
+  max-width: 680px;
   font-size: clamp(2.4rem, 4vw, 3.15rem);
   line-height: 1.08;
 }
@@ -5596,7 +5596,7 @@ footer {
 }
 
 .contractor-proof__grid {
-  grid-template-columns: minmax(280px, 0.75fr) minmax(520px, 1.35fr);
+  grid-template-columns: minmax(420px, 0.95fr) minmax(520px, 1.05fr);
   gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
 }
@@ -5606,10 +5606,10 @@ footer {
 }
 
 .contractor-proof__content h2 {
-  max-width: 12ch;
+  max-width: 620px;
   font-size: clamp(2rem, 3.2vw, 3rem);
   line-height: 1.08;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .contractor-proof__content p:not(.industry-kicker) {
@@ -5702,7 +5702,7 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .contractor-proof__grid {
     grid-template-columns: 1fr;
   }
@@ -5750,9 +5750,9 @@ footer {
 
   .industry-section h2,
   .industry-cta h2 {
-    max-width: 12ch;
-    font-size: clamp(2.15rem, 10vw, 3.35rem);
-    line-height: 1;
+    max-width: 100%;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.08;
   }
 
   .industry-section-heading-left,
@@ -5838,7 +5838,7 @@ footer {
 
 /* SEO/AIO split section heading balance */
 .industry-page .industry-section-split {
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(420px, 0.95fr) minmax(520px, 1.05fr);
   gap: clamp(2rem, 4vw, 5rem);
   align-items: start;
 }
@@ -5850,9 +5850,9 @@ footer {
 
 .industry-page .industry-section-split h2 {
   max-width: 680px;
-  font-size: clamp(2.35rem, 3.2vw, 3.45rem);
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
   line-height: 1.05;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
   text-wrap: balance;
 }
 
@@ -5864,7 +5864,7 @@ footer {
   max-width: 72ch;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .industry-page .industry-section-split {
     grid-template-columns: 1fr;
     gap: clamp(1.25rem, 4vw, 2rem);
@@ -5894,13 +5894,13 @@ body .contractor-proof h2.contractor-proof__title,
 body .industry-proof.contractor-proof h2.contractor-proof__title {
   font-size: clamp(1.9rem, 3vw, 2.65rem) !important;
   line-height: 1.08 !important;
-  letter-spacing: -0.04em;
-  max-width: 14ch;
+  letter-spacing: 0;
+  max-width: 620px;
   margin-bottom: 1.25rem;
 }
 
 body .contractor-proof .contractor-proof__grid {
-  grid-template-columns: minmax(260px, 0.7fr) minmax(560px, 1.4fr);
+  grid-template-columns: minmax(420px, 0.95fr) minmax(520px, 1.05fr);
 }
 
 body .contractor-proof .contractor-proof__frame {
@@ -5914,7 +5914,7 @@ body .contractor-proof .contractor-proof__image {
   height: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   body .contractor-proof .contractor-proof__grid {
     grid-template-columns: 1fr;
   }
