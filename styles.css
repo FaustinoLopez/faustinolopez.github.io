@@ -5835,3 +5835,40 @@ footer {
     margin-inline: 0;
   }
 }
+
+/* Final contractor proof title override */
+body .contractor-proof h2.contractor-proof__title,
+body .industry-proof.contractor-proof h2.contractor-proof__title {
+  font-size: clamp(1.9rem, 3vw, 2.65rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+  margin-bottom: 1.25rem;
+}
+
+body .contractor-proof .contractor-proof__grid {
+  grid-template-columns: minmax(260px, 0.7fr) minmax(560px, 1.4fr);
+}
+
+body .contractor-proof .contractor-proof__frame {
+  padding: clamp(0.75rem, 1.25vw, 1.1rem);
+}
+
+body .contractor-proof .contractor-proof__image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  body .contractor-proof .contractor-proof__grid {
+    grid-template-columns: 1fr;
+  }
+
+  body .contractor-proof h2.contractor-proof__title,
+  body .industry-proof.contractor-proof h2.contractor-proof__title {
+    font-size: clamp(1.9rem, 7vw, 2.5rem) !important;
+    max-width: 100%;
+  }
+}
