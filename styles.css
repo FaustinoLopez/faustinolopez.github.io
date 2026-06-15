@@ -5590,6 +5590,53 @@ footer {
   object-position: center;
 }
 
+/* Contractor proof section sizing override */
+.contractor-proof {
+  overflow-x: clip;
+}
+
+.contractor-proof__grid {
+  grid-template-columns: minmax(280px, 0.75fr) minmax(520px, 1.35fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.contractor-proof__content {
+  min-width: 0;
+}
+
+.contractor-proof__content h2 {
+  max-width: 12ch;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.contractor-proof__content p:not(.industry-kicker) {
+  max-width: 520px;
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  line-height: 1.75;
+}
+
+.contractor-proof__media {
+  width: 100%;
+  min-width: 0;
+}
+
+.contractor-proof__frame {
+  width: 100%;
+  padding: clamp(0.85rem, 1.5vw, 1.25rem);
+  border-radius: 1.5rem;
+}
+
+.contractor-proof__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  border-radius: 0.9rem;
+}
+
 .industry-faq-list {
   display: grid;
   gap: 0.9rem;
@@ -5652,6 +5699,23 @@ footer {
 
   .industry-proof-panel {
     gap: clamp(1.35rem, 4vw, 2.25rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .contractor-proof__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contractor-proof__content h2 {
+    max-width: 100%;
+    font-size: clamp(1.85rem, 7vw, 2.55rem);
+  }
+
+  .contractor-proof__media,
+  .contractor-proof__frame,
+  .contractor-proof__image {
+    width: 100%;
   }
 }
 
