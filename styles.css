@@ -5872,3 +5872,36 @@ body .contractor-proof .contractor-proof__image {
     max-width: 100%;
   }
 }
+
+/* Final contractor proof image fill override */
+body .contractor-proof .contractor-proof__frame {
+  padding: 0 !important;
+  overflow: hidden !important;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 1.6rem;
+}
+
+body .contractor-proof .contractor-proof__image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center;
+  border-radius: inherit;
+}
+
+body .contractor-proof .contractor-proof__media {
+  width: 100%;
+}
+
+body .contractor-proof .contractor-proof__grid {
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  body .contractor-proof .contractor-proof__frame {
+    aspect-ratio: 16 / 10;
+  }
+}
